@@ -17,7 +17,7 @@ for i in range (0,m):
     print ("{} has to be paid ${} for this week".format(employees[i][0],payment))
 for i in range (0,m):
     payment = employees[i][1]*employees[i][2]
-    if payment>avg:
+    if employees[i][2]>avg:
         print ("{} earns more than average".format(employees[i][0]))
     else :
         print("{} is earining less than average".format(employees[0][1]))
