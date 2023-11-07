@@ -1,6 +1,5 @@
 card_num= input("enter the card numver : ")
-last_digit= card_num[-1]
-last_digit= int (last_digit)
+last_digit= int (card_num[-1])
 list_num= list (card_num)
 new_list= []
 for item in list_num:
