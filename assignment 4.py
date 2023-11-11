@@ -1,28 +1,38 @@
+f1= open ("assign_text","r")
+data= f1.read()
+f1= open("assign_text",'w')
+f1.write(data.lower())
 f1= open("assign_text","r")
 data= f1.read()
 
-dic = {}
-new_dic= {}
-for x in range (97,123):
-    a= chr(x)
-    count =0
-    for i in data:
-        if i==a:
-            count+=1
-            dic[a]=count
-print (dic)
-word_count=0
-for i in data:
-    if i==" ":
-        word_count +=1
-print ("total words in file= {}".format(word_count))
+words= data.split()
 
-for x in range (97,123):
-    a= chr(x)
+def count_words(s= str()):
     count =0
     for i in data:
-        if i==a:
-            count+=1
-            ratio= count/word_count
-            new_dic[a]= "%.2f"% ratio
-print (new_dic)
+        if i== " ":
+            count +=1
+    return count+1
+
+num_words= count_words(data)
+print ("number of words preseent in the file : {}".format(num_words))
+dic= {}
+for i in words:
+    frequency= 0
+    for j in words:
+            if j==i:
+                frequency+=1
+    
+    dic[i]= frequency
+print (dic)
+dic_ratio={}
+for i in words:
+    frequency= 0
+    for j in words:
+            if j==i:
+                frequency+=1
+    ratio= frequency/num_words
+    dic_ratio[i]= "%.2f" %ratio
+
+print ("ratio of each word in the file")
+print (dic_ratio)
