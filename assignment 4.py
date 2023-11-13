@@ -7,6 +7,7 @@ data= f1.read()
 
 words= data.split()
 
+
 def count_words(s= str()):
     count =0
     for i in data:
@@ -17,13 +18,11 @@ def count_words(s= str()):
 num_words= count_words(data)
 print ("number of words preseent in the file : {}".format(num_words))
 dic= {}
-for i in words:
-    frequency= 0
-    for j in words:
-            if j==i:
-                frequency+=1
-    
-    dic[i]= frequency
+for i in words: 
+    if i in dic:
+        dic[i]+=1
+    else:
+         dic[i]=1
 print (dic)
 dic_ratio={}
 for i in words:
