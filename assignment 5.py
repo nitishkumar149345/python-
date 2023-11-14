@@ -10,7 +10,7 @@ def employees_email(f_name= str(),m_name=str(),l_name=str()):
     b= "."
     c= " @Omniwyse"
     if m_name=="None":
-        em=f_name + l_name+b +c
+        em=f_name +b+ l_name+b +c
     else:
         em= f_name + a + m_name + b+ l_name+c
     
@@ -35,5 +35,4 @@ for i in employees_details['employees']:
 f2= open("employee_emails.json","w")
 employee_emails= json.dumps(dic)
 f2.write(employee_emails)
-
 
