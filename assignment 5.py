@@ -1,6 +1,7 @@
 import json
 f1= open("employees.json","r")
 json_dic= f1.read()
+f2= open("employee_emalis.json","w")
 
 employees_details= json.loads(json_dic)
 
@@ -16,6 +17,7 @@ def employees_email(f_name= str(),m_name=str(),l_name=str()):
     return em
 
 dic= {}
+f2= open("employee_emails.json","r")
 for i in employees_details['employees']:
     first_name=  (i['firstName'])
     middel_name= str(i['middleName'])
@@ -25,9 +27,13 @@ for i in employees_details['employees']:
         full_name= first_name + last_name
     else:
         full_name= first_name+ middel_name+ last_name
-    email= employees_email(first_name, middel_name,last_name)
-    dic[email]= {"id": id, "full name": full_name}
+    if first_name in f2:
+        break
+    else:
+        email= employees_email(first_name, middel_name,last_name)
+        dic[email]= {"id": id, "full name": full_name}
+f2= open("employee_emails.json","w")
+employee_emails= json.dumps(dic)
+f2.write(employee_emails)
 
-
-print (dic)
 
