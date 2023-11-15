@@ -14,9 +14,9 @@ def genereate_emails(f,m,l):
     b="."
     c="@omiwyse"
     if m=="None":
-        em= f+b+l+c
+        em= (f+b+l+c).lower()
     else:
-        em= f+a+m+b+l+c
+        em= (f+a+m+b+l+c).lower()
     return em
 def dictionery(a={}):
     dic= {}
